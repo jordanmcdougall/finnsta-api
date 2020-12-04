@@ -1,7 +1,9 @@
 import path from 'path'
 import fs from 'fs'
 import colors from 'vuetify/es5/util/colors'
-
+const routerBase = process.env.DEPLOY_ENV === 'GEN'
+  ? '/finnsta-api/'
+  : '/'
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -31,10 +33,10 @@ export default {
   },
 
   privateRuntimeConfig: {
-    appId: process.env.APP_ID
+    APP_ID: process.env.APP_ID
   },
 
-  router: { base: '/finnsta-api/' },
+  router: { base: routerBase },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
