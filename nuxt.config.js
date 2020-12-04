@@ -34,6 +34,8 @@ export default {
     appId: process.env.APP_ID
   },
 
+  router: { base: '/finnsta-api/' },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
